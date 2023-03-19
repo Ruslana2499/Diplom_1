@@ -1,9 +1,10 @@
+import common.Constants;
 import org.junit.Assert;
 import org.junit.Test;
 import praktikum.Bun;
 
 public class BunTests {
-    private final Bun bun = new Bun("С Кусьлой", 12.99f);
+    private final Bun bun = new Bun("С Кусьлой", Constants.BUN_PRICE);
 
     @Test
     public void testNameBun() {
@@ -12,6 +13,6 @@ public class BunTests {
 
     @Test
     public void testPriceBun() {
-        Assert.assertEquals(12.99f, bun.getPrice(), 0);
+        Assert.assertEquals(Constants.BUN_PRICE, bun.getPrice(), 0);
     }
 }

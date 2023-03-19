@@ -1,3 +1,4 @@
+import common.Constants;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +26,7 @@ public class IngredientTypeTests {
 
     @Test
     public void testIngredientType() {
-        Ingredient ingredient = new Ingredient(type, "Сырный", 5.88f);
+        Ingredient ingredient = new Ingredient(type, "Сырный", Constants.SAUCE_PRICE);
         Assert.assertEquals(type, ingredient.getType());
     }
 }

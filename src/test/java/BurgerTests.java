@@ -1,3 +1,4 @@
+import common.Constants;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -22,9 +23,9 @@ public class BurgerTests {
 
     @Before
     public void setUp(){
-        Mockito.when(bun.getPrice()).thenReturn(12.5f);
-        Mockito.when(sauce.getPrice()).thenReturn(5.5f);
-        Mockito.when(filling.getPrice()).thenReturn(7.5f);
+        Mockito.when(bun.getPrice()).thenReturn(Constants.BUN_PRICE);
+        Mockito.when(sauce.getPrice()).thenReturn(Constants.SAUCE_PRICE);
+        Mockito.when(filling.getPrice()).thenReturn(Constants.FILLING_PRICE);
         Mockito.when(bun.getName()).thenReturn("Булочка с Кусьлой");
         Mockito.when(sauce.getType()).thenReturn(IngredientType.SAUCE);
         Mockito.when(filling.getType()).thenReturn(IngredientType.FILLING);
@@ -42,7 +43,7 @@ public class BurgerTests {
         Burger burger = new Burger();
         burger.setBuns(bun);
         burger.addIngredient(sauce);
-        Assert.assertEquals(30.5f, burger.getPrice(),0);
+        Assert.assertEquals(Constants.BUN_AND_SAUCE_PRICE, burger.getPrice(),0);
     }
 
     @Test
@@ -52,7 +53,7 @@ public class BurgerTests {
         burger.addIngredient(sauce);
         burger.addIngredient(filling);
         burger.removeIngredient(0);
-        Assert.assertEquals(32.5f, burger.getPrice(),0);
+        Assert.assertEquals(Constants.BUN_AND_FILLING_PRICE, burger.getPrice(),0);
     }
 
     @Test

@@ -1,10 +1,11 @@
+import common.Constants;
 import org.junit.Assert;
 import org.junit.Test;
 import praktikum.Ingredient;
 import praktikum.IngredientType;
 
 public class IngredientTests {
-    private final Ingredient ingredient = new Ingredient(IngredientType.SAUCE, "Сырный", 5.88f);
+    private final Ingredient ingredient = new Ingredient(IngredientType.SAUCE, "Сырный", Constants.SAUCE_PRICE);
 
     @Test
     public void testIngredientName() {
@@ -13,6 +14,6 @@ public class IngredientTests {
 
     @Test
     public void testIngredientPrice() {
-        Assert.assertEquals(5.88f, ingredient.getPrice(), 0);
+        Assert.assertEquals(Constants.SAUCE_PRICE, ingredient.getPrice(), 0);
     }
 }
